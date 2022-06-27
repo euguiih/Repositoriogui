@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: rgba(0, 0, 0, 0.185);
+            text-align: center;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        
+    </header>
+    <h1>Faturamento</h1>
+    
+    <div id="botao">
+        <input type="number" size="10" placeholder="Informe um número" id="numero"> <br><br>
+        <input type="button" value="Aperte para verificar se o número pertence a sequência de fibonacci." onclick="calcular()">
+    </div>
+    
+    <script>
+        function calcular () {
+            var valor1 = document.getElementById('numero').value
+            /*Sequenci*/
+            n1 = 0
+            n2 = 1
+            let n3 = []
+            n3[0] = n1;
+            n3[1] = n2;
+            let soma = 0;
+
+            for (cont = 2; cont < 100; cont++) { 
+                soma = n1 + n2
+                n1 = n2
+                n2 = soma         
+                n3[cont] = soma
+            }
+
+            if (n3.includes(parseInt(valor1))) {
+                    alert('Esse número pertence a sequencia de fibonacci!')
+                     
+                } else {
+                        alert('Esse número não pertence a sequencia de fibonacci!') 
+                        
+                }                            
+
+        }
+    </script>
+</body>
+</html>
